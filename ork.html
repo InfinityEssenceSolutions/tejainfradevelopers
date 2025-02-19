@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta charset="utf-8">
+        <meta content="IE=edge" http-equiv="X-UA-Compatible">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <link href="{{asset('assets/bootstrap/bootstrap.min.css')}}" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        
+    </head>
+    <style>
+        .content-container {
+            border: 2px solid #000; /* Set the border style */
+            padding: 15px; /* Adjust padding as needed */
+        }
+        @media print {
+            .no-print {
+                display: none;
+            }
+
+            .page-break {
+                page-break-after: always;
+            }
+        }
+
+        .container-fluid {
+            border: 3px solid #929292;
+            margin-top: 10px; /* Adjusted margin */
+        }
+
+        .fsize-label {
+            font-size: 15px;
+        }
+
+        .txt-right {
+            text-align: right;
+        }
+
+        .txt-center {
+            text-align: center;
+        }
+
+        .p-rel {
+            position: relative;
+        }
+
+        .inv-logo {
+            position: absolute;
+            left: 16px;
+            top: -50px;
+        }
+
+        .class-inv-1,
+        .class-inv-11 {
+            padding-bottom: 5px;
+            padding-top: 5px;
+            background: #f8f8f8;
+        }
+
+        .class-inv-2,
+        .class-inv-12 {
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 25px;
+        }
+
+        .class-inv-3,
+        .class-inv-13 {
+            border: 2px solid #000;
+            font-size: 18px;
+            font-weight: 600;
+            box-shadow: 1px 1px 0px 1px;
+            border-radius: 6px;
+        }
+
+        .class-inv-4,
+        .class-inv-14 {
+            font-size: 22px;
+            font-weight: 500;
+            margin-top: 12px;
+        }
+
+        .class-inv-5,
+        .class-inv-15 {
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .class-inv-6 {
+            padding: 10px 0px 10px 0px !important;
+        }
+
+        .class-inv-7 {
+            font-size: 26px;
+            color: #ff5b5b;
+        }
+
+        .class-inv-8 {
+            border-bottom: 1px dotted #000;
+            font-size: 16px;
+        }
+
+        .class-inv-9,
+        .class-inv-17 {
+            font-size: 16px;
+            text-transform: capitalize;
+        }
+
+        .class-inv-10,
+        .class-inv-20 {
+            padding-top: 50px !important;
+        }
+
+        .class-inv-18 {
+            border-top: none !important;
+        }
+
+        .class-inv-19 {
+            font-size: 26px;
+            color: #ff5b5b;
+        }
+
+        .class-inv-21 {
+            font-size: 80% !important;
+        }
+
+        .title-head {
+            font-size: 24px;
+            color: #010975;
+        }
+        img{
+            width: 250px;
+            height:160px;
+          }
+
+        @media only screen and  (max-width:768px){
+            
+          img{
+            width: 143px;
+            height:131px;
+          }
+
+}
+
+    </style>
+    <body>
+       
+          
+                <div class="container-fluid">
+                    <div class="row d-flex justify-content-start align-items-start">
+                        <div class="col-5 col-lg-4 col-md-3">
+                        <strong>
+                            <img src="{{asset('assets/img/logo.jpg')}}" class="img-fluid" style="width:250px; height:150px">
+                        </strong>
+                    </div>
+                    <div class="col-7 col-lg-7 col-md-7">
+                       
+
+                        <strong class="fsize-label m-3 mx-3">
+                            <span class="title-head">
+                                {{ $set->name }}
+                            </span>
+                        </strong>
+                        <strong class = "">
+                            <span>
+                                <h4> {{ $set->email1 }}</h4>
+                            </span>
+                        </strong>
+                        <strong class = "">
+                            <span >
+                                <h4> {{ $set->email2 }}</h4>
+                            </span>
+                        </strong>
+                        <strong class = "">
+                            <span >
+                                <h4> {{ $set->contact1 }}</h4>
+                            </span>
+                        </strong>
+                        <strong class = "">
+                            <span >
+                                <h4> {{ $set->contact2 }}</h4>
+                            </span>
+                        </strong>
+                        <strong class = "" >
+                            <span >
+                                <h4>{{ $set->address }}</h4>
+                            </span>
+                        </strong>
+                   
+                    </div>
+                    
+                </div>
+                
+            </div>
+          
+      
+       
+<div class="container-fluid" style="height: auto">
+<div class="row" style="font-size:12px">
+                   
+       
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <table class="table bank-details-tbl">
+            <thead>
+                <tr>
+                    <th>Customer Name:</th>
+                    <td colspan="2">
+                        <div class="class-inv-16">
+                            {{$booking->clientDetails->client_name}}
+                        </div>
+                    </td>
+                    <th class="text-right"></th>
+                </tr>
+                
+                <tr>
+                    <th>Contact:</th>
+                    <td colspan="3">
+                        <div class="class-inv-16">
+                            {{$booking->clientDetails->client_mobile}}
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Address:</th>
+                    <td colspan="3">
+                        <div class="class-inv-16">
+                            {{$booking->clientDetails->client_address}}
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>GST No:</th>
+                    <td colspan="3">
+                        <div class="class-inv-16">
+                            {{$booking->clientDetails->company_gstno}}
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Booking Date</th>
+                    <td colspan="3">
+                        <div class="class-inv-16">
+                            {{ $booking->created_at->format('d-m-y') }}
+                        </div>
+                    </td>
+                </tr>
+                  
+            </thead>
+        </table>
+    </div>
+</div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <h4>Booking Details:</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th class="text-center" width="10%">S.No</th>
+                        
+                        <th class="text-center" width="15%">Check In</th>
+                        <th class="text-center" width="15%">Check Out</th>
+                        <th class="text-center" width="10%">Duration</th>
+                        <th class="text-center" width="8%">Room Number</th>
+                        <th class="text-center" width="15%">Room Type</th>
+                        <th class="text-center" width="10%">Room Rent</th>
+                        <!--<th class="text-center" width="10%">Amount</th>-->
+                    </tr>
+                    
+                </thead>
+                <tbody>
+               
+
+
+<?php
+                                        $count=0;
+                                        $totalAmount = 0; 
+                                        ?>
+                                    @foreach ($booking->checkinDetails as $checkin)
+ 
+                                    <tr>
+                                        <td>{{++$count}}</td>
+                                        <td>{{$checkin->check_in}}</td>
+                                        <td>{{$checkin->check_out}}</td>
+                                        <td>{{$checkin->duration}}</td>
+                                        <td>{{$checkin->roomDetails->room_no}}</td>
+                                        <td>{{$checkin->roomType->room_type}}</td>
+                                        <td>{{$checkin->roomDetails->room_rent}}</td>
+                                       </tr>
+                                       @php $totalAmount +=  floatval($checkin->duration) * floatval($checkin->roomDetails->room_rent); @endphp
+                                                         
+                                       @endforeach
+                                       <tr>
+                                           <th class="text-right" colspan="6">Total:</th>
+                                           <td class="text-right">{{ $totalAmount }}</td>
+                                       </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                            <h4>POS Details:</h4>
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="text-center" width="10%">S.No</th>
+                                                        <th class="text-center" width="25%">sale_id</th>
+                                                        <th class="text-center" width="25%">Date</th>
+                                                        <th class="text-center" width="25%">Grand Total</th>
+                                                        {{-- <th class="text-center" width="15%">Advance</th> --}}
+                                                        <th class="text-center" width="25%">Balance</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @php $count = 0; $totalBalance=0;  @endphp
+                                                    @foreach ($sale as $saleItem)
+                                                        @if ($booking->client_id == $saleItem->client_id)
+                                                           
+                                                                @php $count++; @endphp
+                                                                <tr>
+                                                                    <td>{{ $count }}</td>
+                                                                    <td>{{ $saleItem->sale_id }}</td>
+                                                                    <td>{{ ($saleItem->created_at)->format('d-m-Y')  }}</td>
+                                                                    <td>{{ $saleItem->total_price }}</td>
+                                                                    {{-- <td>{{ $saleItem->advance }}</td> --}}
+                                                                    <td>{{ $saleItem->balance }}</td>
+                                                                </tr>
+                                                                @php $totalBalance += $saleItem->balance; @endphp
+                                                                
+                                                            
+                                                        @endif
+                                                   
+                                                    @endforeach
+                                                </tbody>
+                                                <tfoot>
+                                                    <th colspan="4" class="text-right">Total:</th>
+                                                    <td class="text-right">
+                                                        
+                                                        {{ $totalBalance }}
+                                                    </td>
+                                                </tfoot>
+                                            </table>
+                                        </div>
+                                    </div>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                   
+                <table class="table table-bordered">
+                    <tbody>                
+                    <tr>
+                        <th class="text-right" colspan="6">Sub Total</th>
+                        <td class="text-right">{{ $booking->before_advance }}</td>
+                    </tr>
+                    <tr>
+                        <td class="text-right" colspan="6">Room TaxRate%/TaxAmount</td>
+                        <td class="text-right">{{ ($booking->tax) }}%/{{ ($booking->taxAmount) }}</td>
+                    </tr>
+                    <tr>
+                        <td class="text-right" colspan="6">Room Discount%/Discount amount</td>
+                        <td class="text-right">{{ ($booking->discount) }}%/{{ ($booking->disAmount) }}</td>
+                    </tr>
+                    <tr>
+                        <td class="text-right" colspan="6">POS TaxRate/TaxAmount</td>
+                        <td class="text-right">-</td>
+                    </tr>
+                    <tr>
+                        <td class="text-right" colspan="6">POS Discount/Discount amount</td>
+                        <td class="text-right">-</td>
+                    </tr>
+                    <tr>
+                        <th class="text-right" style="font-weight: 700" colspan="6">Grand Total</th>
+                        <td class="text-right">{{ ($booking->before_advance)+($booking->taxAmount)-($booking->disAmount) }}</td>
+                    </tr>
+                    <tr>
+                        <td class="text-right" colspan="6">Advance/Amount Paid</td>
+                        <td class="text-right">{{ ($booking->advance) }}</td>
+                    </tr>
+                    <tr>
+                        <td class="text-right" colspan="6">POS Advance Paid</td>
+                        <td class="text-right">-</td>
+                    </tr>
+                    <tr>
+                        <th class="text-right" style="font-weight: 700" colspan="6">Net Balance</th>
+                        <td class="text-right">{{ ($booking->after_advance) }}</td>
+                    </tr>
+                    {{-- <tr>
+                        <th class="text-right" colspan="6">Payment Mode</th>
+                        <td class="text-right">{{ $booking->payment_mode }}</td>
+                    </tr> --}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <h4>Payment Details:</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>SlNo</th>
+                        <th>Date</th>
+                         <th>Invoice Id</th>
+                        <th>Transaction Id</th>
+                        <th>Source</th>
+                        <th>Total Amount</th>
+                        <th>Payment Mode</th>
+                    </tr>
+                    
+                </thead>
+                                    <tbody>
+               
+                                     <?php
+                                        $count=0;
+                                        $totalAmount = 0; 
+                                        ?>
+                                      @foreach ($records as $record)
+                                      <tr>
+                                          <td>{{ ++$count}}</td>
+                                           <td>{{ $record->created_at->format('d-m-y') }}</td>
+                                          <td>{{ $record->invoice_id }}</td>
+                                          <td>{{ $record->transaction_id }}</td>
+                                          <td>{{ $record->source }}</td>
+                                          <td>{{ $record->total_amount }}</td>
+                                          <td>{{ $record->payment_mode }}</td>
+                                      </tr>
+  
+                                      @endforeach
+                                      
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <h4>Terms and Conditions</h4>
+                                <table class="table table-bordered">
+                                    
+                                                        <tbody>
+                                   
+                                                        
+                                                          <tr>
+                                                              <td><ul><li>{{ $set->terms }}</li></ul></td>  
+                                                          </tr>
+                      
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                    
+
+                                    
+                                    
+
+</div> 
+</div>
+<div class="col-sm-12 text-center no-print">
+<button class="btn btn-lg m-2 btn-danger" onclick="goBack()">
+    <span style="text-decoration: none; color: #f8f8f8">Cancel</span>
+</button>
+  
+     <button class="btn btn-lg btn-success no-print" onclick="window.print()">
+        {{__('Print')}}
+    </button>
+   
+</div>
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+    </body>
+</html>
